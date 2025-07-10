@@ -185,9 +185,8 @@ export default function HomePage() {
                       {[...Array(5)].map((_, i) => (
                         <Star
                           key={i}
-                          className={`${styles.star} ${
-                            i < Math.floor(product.rating) ? styles.starFilled : styles.starEmpty
-                          }`}
+                          className={`${styles.star} ${i < Math.floor(product.rating) ? styles.starFilled : styles.starEmpty
+                            }`}
                         />
                       ))}
                     </div>
