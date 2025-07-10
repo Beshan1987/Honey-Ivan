@@ -1,0 +1,474 @@
+.page {
+  min-height: 100vh;
+  background: var(--gradient-bg);
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 4rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--text-primary);
+}
+
+.description {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  max-width: 42rem;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.contentWrapper {
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+.contactsGrid {
+  display: grid;
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.contactCard {
+  background: var(--bg-primary);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  transition: all 0.2s ease-in-out;
+}
+
+.telegramCard,
+.emailCard {
+  cursor: pointer;
+}
+
+.telegramCard:hover,
+.emailCard:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-1px);
+  border-color: var(--accent-primary);
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contactIcon {
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--accent-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.telegramIcon {
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--bg-secondary);
+  border: 2px solid var(--accent-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--accent-secondary);
+}
+
+.telegramIcon .icon {
+  color: var(--accent-primary);
+}
+
+.contactInfo {
+  flex: 1;
+}
+
+.contactTitle {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.contactName {
+  color: var(--text-primary);
+  font-weight: 500;
+  font-size: 1.125rem;
+}
+
+.contactLink {
+  color: var(--accent-secondary);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.contactLink:hover {
+  color: var(--accent-primary);
+}
+
+.emailLink {
+  color: var(--accent-secondary);
+  font-weight: 500;
+  font-size: 1.125rem;
+  margin-bottom: 0.25rem;
+}
+
+.telegramLink {
+  color: var(--accent-primary);
+  font-weight: 500;
+  font-size: 1.125rem;
+  margin-bottom: 0.25rem;
+}
+
+.emailHint,
+.telegramHint {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.quickActionsSection {
+  margin-bottom: 4rem;
+}
+
+.quickActionsHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.quickActionsTitle {
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.quickActionsDescription {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  max-width: 42rem;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.quickActionsGrid {
+  display: grid;
+  gap: 2rem;
+}
+
+.quickActionCard {
+  background: var(--bg-primary);
+  border: 2px solid var(--accent-light);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.quickActionCard:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+  border-color: var(--accent-primary);
+}
+
+.quickActionIcon {
+  width: 4rem;
+  height: 4rem;
+  background-color: var(--accent-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+}
+
+.quickActionIconSvg {
+  width: 2rem;
+  height: 2rem;
+  color: var(--accent-primary);
+}
+
+.quickActionTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.quickActionDescription {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.quickActionButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--accent-primary);
+  color: var(--bg-primary);
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-size: 1.125rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.quickActionButton:hover {
+  background-color: var(--accent-secondary);
+  transform: translateY(-1px);
+}
+
+.buttonIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.infoGrid {
+  display: grid;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.infoCard {
+  background: var(--bg-primary);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+}
+
+.infoCard:first-child {
+  background: var(--accent-light);
+  border: 1px solid var(--accent-primary);
+}
+
+.infoCard:last-child {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+}
+
+.infoTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.infoDescription {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.infoButton {
+  background-color: var(--accent-primary);
+  color: var(--bg-primary);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.infoCard:last-child .infoButton {
+  background-color: var(--accent-secondary);
+}
+
+.infoButton:hover {
+  background-color: var(--accent-secondary);
+  transform: translateY(-1px);
+}
+
+.infoCard:last-child .infoButton:hover {
+  opacity: 0.9;
+}
+
+.alternativeSection {
+  margin-bottom: 4rem;
+}
+
+.alternativeHeader {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.alternativeTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.alternativeDescription {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.alternativeGrid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.alternativeCard {
+  background: var(--bg-secondary);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.alternativeCard h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.copyableText {
+  font-family: monospace;
+  background: var(--bg-primary);
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid var(--border-color);
+  margin-bottom: 1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.copyButton {
+  background-color: var(--accent-light);
+  color: var(--accent-text);
+  border: 1px solid var(--accent-primary);
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.copyButton:hover {
+  background-color: var(--accent-primary);
+  color: var(--bg-primary);
+}
+
+.responseTimeSection {
+  text-align: center;
+}
+
+.responseTimeCard {
+  background: var(--bg-primary);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+}
+
+.responseTimeTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.responseTimeGrid {
+  display: grid;
+  gap: 1rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.responseTimeItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.responseTimeTelegram {
+  color: var(--accent-primary);
+}
+
+.responseTimePhone {
+  color: var(--accent-secondary);
+}
+
+.responseTimeEmail {
+  color: var(--text-primary);
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .quickActionsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .alternativeGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .responseTimeGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .responseTimeItem {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .contactsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .infoGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .contactsGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .container {
+    padding: 0 2rem;
+  }
+}
