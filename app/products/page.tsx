@@ -114,15 +114,11 @@ export default function ProductsPage() {
                       {[...Array(5)].map((_, i) => (
                         <Star
                           key={i}
-                          className={`${styles.star} ${
-                            i < Math.floor(product.rating) ? styles.starFilled : styles.starEmpty
-                          }`}
+                          className={`${styles.star} ${i < Math.floor(product.rating) ? styles.starFilled : styles.starEmpty
+                            }`}
                         />
                       ))}
                     </div>
-                    <span className={styles.ratingText}>
-                      {product.rating} ({product.reviews} отзывов)
-                    </span>
                   </div>
 
                   <div className={styles.priceSection}>

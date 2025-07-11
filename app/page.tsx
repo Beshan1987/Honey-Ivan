@@ -47,7 +47,7 @@ export default function HomePage() {
       price: 17,
       originalPrice: 19,
       image: "/images/hero-honey.jpg",
-      rating: 4.9,
+      rating: 3.5,
       reviews: 156,
       description: "Натуральные медовые соты прямо из улья",
       badge: "Сырой и натуральный",
@@ -104,7 +104,7 @@ export default function HomePage() {
 
             <div className={styles.heroImage}>
               <div className={styles.heroImageContainer}>
-                <Image src="/images/hero-honey.jpg" alt="Банка чистого мёда" width={500} height={600} />
+                <Image src="/images/hero-honey.jpg" alt="Банка чистого мёда" width={500} height={600} layout="responsive" />
               </div>
               <div className={styles.heroImageBg}></div>
             </div>
@@ -190,9 +190,6 @@ export default function HomePage() {
                         />
                       ))}
                     </div>
-                    <span className={styles.ratingText}>
-                      {product.rating} ({product.reviews} отзывов)
-                    </span>
                   </div>
 
                   <div className={styles.productPrice}>

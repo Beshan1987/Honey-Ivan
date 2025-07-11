@@ -337,6 +337,9 @@
 }
 
 .page_productCard__5Z_W3 {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
   background: var(--bg-primary);
   border-radius: 0.5rem;
   box-shadow: var(--shadow-md);
