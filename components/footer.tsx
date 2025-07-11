@@ -11,7 +11,7 @@ export function Footer() {
               <div className={styles.logoIcon}>
                 <span>🍯</span>
               </div>
-              <span className={styles.logoText}>Золотой Улей</span>
+              <span className={styles.logoText}>ПЧАЛЯР</span>
             </div>
             <p className={styles.description}>
               Премиальные медовые продукты от нашей семьи к вашей. Чистый, натуральный и экологически чистый мёд в

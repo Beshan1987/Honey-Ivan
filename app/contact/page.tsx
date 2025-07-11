@@ -17,7 +17,7 @@ export default function ContactPage() {
   }
 
   const sendEmail = () => {
-    const subject = "Вопрос о мёде - Золотой Улей"
+    const subject = "Вопрос о мёде - ПЧАЛЯР"
     const body = `Здравствуйте, Иван!
 
 Меня интересует ваш мёд. Хотел бы узнать подробнее о:
@@ -37,7 +37,7 @@ export default function ContactPage() {
   }
 
   const sendWholesaleEmail = () => {
-    const subject = "Оптовая закупка мёда - Золотой Улей"
+    const subject = "Оптовая закупка мёда - ПЧАЛЯР"
     const body = `Здравствуйте, Иван!
 
 Интересует оптовая закупка мёда. Хотел бы узнать:
@@ -66,7 +66,7 @@ export default function ContactPage() {
         <div className={styles.container}>
           <div className={styles.header}>
             <span className="badge">Свяжитесь с нами</span>
-            <h1 className={styles.title}>Контакты Золотого Улья</h1>
+            <h1 className={styles.title}>Контакты ПЧАЛЯРА</h1>
             <p className={styles.description}>
               Есть вопросы о нашем мёде или хотите сделать индивидуальный заказ? Мы будем рады услышать от вас.
             </p>

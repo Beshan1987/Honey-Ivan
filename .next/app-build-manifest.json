@@ -12,11 +12,11 @@
       "static/css/app/page.css",
       "static/chunks/app/page.js"
     ],
-    "/contact/page": [
+    "/process/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/contact/page.css",
-      "static/chunks/app/contact/page.js"
+      "static/css/app/process/page.css",
+      "static/chunks/app/process/page.js"
     ],
     "/about/page": [
       "static/chunks/webpack.js",
@@ -24,11 +24,11 @@
       "static/css/app/about/page.css",
       "static/chunks/app/about/page.js"
     ],
-    "/products/page": [
+    "/contact/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/products/page.css",
-      "static/chunks/app/products/page.js"
+      "static/css/app/contact/page.css",
+      "static/chunks/app/contact/page.js"
     ],
     "/_not-found/page": [
       "static/chunks/webpack.js",
