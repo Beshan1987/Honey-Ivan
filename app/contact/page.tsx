@@ -4,25 +4,6 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import styles from "./page.module.css"
 
-import type { Metadata } from "next"
-
-export const metadata: Metadata = {
-  title: "Контакты - ПЧАЛЯР| Связаться с нами",
-  description:
-    "Контакты пасеки Золотой Улей. Телефон: +375 44 515-84-94, Email: nickel07@mail.ru, Telegram: @iv_11111. Заказ мёда и консультации.",
-  keywords: "контакты, телефон, email, telegram, заказать мёд, консультация, связаться, Иван пчеловод",
-  openGraph: {
-    title: "Контакты - ПЧАЛЯР",
-    description:
-      "Свяжитесь с нами для заказа натурального мёда. Телефон, email, Telegram - выберите удобный способ связи.",
-    type: "website",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-}
-
 export default function ContactPage() {
   const openTelegram = () => {
     const message = "Здравствуйте, Иван! Хочу узнать больше о вашем мёде."
