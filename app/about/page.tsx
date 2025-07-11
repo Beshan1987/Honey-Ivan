@@ -12,7 +12,7 @@ export default function AboutPage() {
         <div className={styles.container}>
           <div className={styles.header}>
             <span className="badge">Наша история</span>
-            <h1 className={styles.title}>О компании Золотой Улей</h1>
+            <h1 className={styles.title}>ПЧАЛЯР</h1>
             <p className={styles.description}>
               Узнайте больше о нашей семейной традиции пчеловодства и приверженности качеству.
             </p>
@@ -21,15 +21,12 @@ export default function AboutPage() {
           <div className={`${styles.mainGrid} lg-grid-cols-2`}>
             <div className={styles.content}>
               <div className={styles.textSection}>
-                <h2 className={styles.mainTitle}>Три поколения мастерства пчеловодства</h2>
+                <h2 className={styles.mainTitle}>От хобби к образу жизни</h2>
                 <p className={styles.paragraph}>
-                  Основанная в 2000 году, компания "Золотой Улей" является семейным бизнесом, посвящённым производству
-                  мёда высочайшего качества. Наши устойчивые методы пчеловодства гарантируют, что каждая банка содержит
-                  чистый, нефильтрованный мёд, который передаёт суть природы.
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est quos commodi vel ipsam et similique ea neque unde molestiae facilis. Iusto accusamus mollitia impedit eius, eum molestias saepe quibusdam velit.
                 </p>
                 <p className={styles.paragraph}>
-                  Мы тесно сотрудничаем с местными фермерами и поддерживаем более 200 ульев на нетронутых лугах и полях
-                  с дикими цветами, обеспечивая нашим пчёлам доступ к лучшим источникам нектара.
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est quos commodi vel ipsam et similique ea neque unde molestiae facilis. Iusto accusamus mollitia impedit eius, eum molestias saepe quibusdam velit.
                 </p>
               </div>
 
@@ -86,8 +83,7 @@ export default function AboutPage() {
                 </div>
                 <h3 className={styles.valueTitle}>Качество</h3>
                 <p className={styles.valueDescription}>
-                  Каждая банка мёда проходит строгий контроль качества, чтобы гарантировать чистоту и натуральность
-                  продукта.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium aliquid laboriosam non sequi fuga hic quia. Asperiores, molestiae deserunt enim ipsum tempore rerum, quisquam quae nulla quas repellendus qui possimus!
                 </p>
               </div>
 

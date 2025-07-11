@@ -38,16 +38,13 @@ export function Footer() {
           </div>
 
           <div className={styles.section}>
-            <h4>Компания</h4>
+            <h4>ПЧАЛЯР</h4>
             <ul className={styles.linkList}>
               <li>
                 <Link href="/about">О нас</Link>
               </li>
               <li>
                 <Link href="/process">Наш процесс</Link>
-              </li>
-              <li>
-                <Link href="/ecology">Экология</Link>
               </li>
               <li>
                 <Link href="/contact">Контакты</Link>
@@ -57,7 +54,7 @@ export function Footer() {
         </div>
 
         <div className={styles.copyright}>
-          <p>&copy; {new Date().getFullYear()} Золотой Улей. Все права защищены.</p>
+          <p>&copy; {new Date().getFullYear()} ПЧАЛЯР. Все права защищены.</p>
         </div>
       </div>
     </footer>

@@ -88,11 +88,11 @@ export default function HomePage() {
 
               <div className={styles.heroStats}>
                 <div className={styles.statItem}>
-                  <div className={styles.statNumber}>500+</div>
+                  <div className={styles.statNumber}>100+</div>
                   <div className={styles.statLabel}>Довольных клиентов</div>
                 </div>
                 <div className={styles.statItem}>
-                  <div className={styles.statNumber}>15+</div>
+                  <div className={styles.statNumber}>5+</div>
                   <div className={styles.statLabel}>Лет опыта</div>
                 </div>
                 <div className={styles.statItem}>
