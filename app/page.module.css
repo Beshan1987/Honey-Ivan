@@ -196,7 +196,6 @@
 .productCard {
   display: flex;
   flex-flow: column;
-  justify-content: space-between;
   background: var(--bg-primary);
   border-radius: 0.5rem;
   box-shadow: var(--shadow-md);
@@ -221,6 +220,11 @@
   transition: transform 0.3s ease-in-out;
 }
 
+
+.productContainer {
+  flex: 1;
+}
+
 .productCard:hover .productImage {
   transform: scale(1.05);
 }
@@ -238,6 +242,8 @@
 }
 
 .productContent {
+  flex: 1;
+  justify-content: end;
   padding: 1.5rem;
   display: flex;
   flex-direction: column;

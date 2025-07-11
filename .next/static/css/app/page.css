@@ -340,7 +340,6 @@
 .page_productCard__5Z_W3 {
   display: flex;
   flex-flow: column;
-  justify-content: space-between;
   background: var(--bg-primary);
   border-radius: 0.5rem;
   box-shadow: var(--shadow-md);
@@ -365,6 +364,11 @@
   transition: transform 0.3s ease-in-out;
 }
 
+
+.page_productContainer__znvA4 {
+  flex: 1;
+}
+
 .page_productCard__5Z_W3:hover .page_productImage__PjWtf {
   transform: scale(1.05);
 }
@@ -382,6 +386,8 @@
 }
 
 .page_productContent__GOwZR {
+  flex: 1;
+  justify-content: end;
   padding: 1.5rem;
   display: flex;
   flex-direction: column;

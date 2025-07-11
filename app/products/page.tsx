@@ -131,7 +131,7 @@ export default function ProductsPage() {
                   {product.badge && <span className={styles.badge}>{product.badge}</span>}
                 </div>
                 <div className={styles.content}>
-                  <div>
+                  <div className={styles.contentContainer}>
                     <h3 className={styles.productTitle}>{product.name}</h3>
                     <p className={styles.productDescription}>{product.description}</p>
                   </div>
