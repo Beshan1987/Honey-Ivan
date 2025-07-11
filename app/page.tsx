@@ -122,7 +122,7 @@ export default function HomePage() {
               </div>
               <h3 className={styles.featureTitle}>Бесплатная доставка</h3>
               <p className={styles.featureDescription}>
-                Бесплатная доставка при заказе от 50 BYN. Быстрая и надёжная доставка по всей Беларуси.
+                Бесплатная доставка при заказе от 30 BYN. Быстрая и надёжная доставка по всей Беларуси.
               </p>
             </div>
 
@@ -140,9 +140,9 @@ export default function HomePage() {
               <div className={styles.featureIcon}>
                 <Award />
               </div>
-              <h3 className={styles.featureTitle}>Награды</h3>
+              <h3 className={styles.featureTitle}>Признание</h3>
               <p className={styles.featureDescription}>
-                Признание за превосходство в производстве мёда и устойчивое пчеловодство.
+                Более 100 доволных покупателей регулярно приобретают наш мед
               </p>
             </div>
           </div>
