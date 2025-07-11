@@ -145,7 +145,7 @@ export default function HomePage() {
 
             <div className={styles.heroImage}>
               <div className={styles.heroImageContainer}>
-                <Image src="/images/hero-honey.jpg" alt="Банка чистого мёда" width={500} height={600} layout="responsive" />
+                <Image src="/images/hero-pic.jpg" alt="Банка чистого мёда" width={500} height={600} layout="responsive" />
               </div>
               <div className={styles.heroImageBg}></div>
             </div>
