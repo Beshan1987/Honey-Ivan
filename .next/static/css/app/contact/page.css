@@ -96,7 +96,6 @@
 }
 
 .mobile-menu_navigation___vgDW {
-  flex: 1;
   display: flex;
   flex-direction: column;
   padding: 1rem 0;
@@ -160,7 +159,6 @@
     display: none;
   }
 }
-
 /*!******************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./components/theme-toggle.module.css ***!
   \******************************************************************************************************************************************************************************************************************************************************************************/
@@ -697,10 +695,11 @@
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./components/header.module.css ***!
   \************************************************************************************************************************************************************************************************************************************************************************/
 .header_header__zJOD0 {
+  position: fixed;
+  width: 100%;
   background: var(--bg-primary);
   box-shadow: var(--shadow-sm);
   border-bottom: 1px solid var(--border-color);
-  position: sticky;
   top: 0;
   z-index: 50;
   transition: all 0.3s ease;
@@ -791,7 +790,7 @@
   gap: 1rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 850px) {
   .header_navigation__5FUFN {
     display: flex;
   }
@@ -818,7 +817,6 @@
     padding: 0 2rem;
   }
 }
-
 /*!************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./components/footer.module.css ***!
   \************************************************************************************************************************************************************************************************************************************************************************/

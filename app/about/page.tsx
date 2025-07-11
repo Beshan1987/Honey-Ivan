@@ -23,7 +23,7 @@ export default function AboutPage() {
               <div className={styles.textSection}>
                 <h2 className={styles.mainTitle}>Три поколения мастерства пчеловодства</h2>
                 <p className={styles.paragraph}>
-                  Основанная в 1985 году, компания "Золотой Улей" является семейным бизнесом, посвящённым производству
+                  Основанная в 2000 году, компания "Золотой Улей" является семейным бизнесом, посвящённым производству
                   мёда высочайшего качества. Наши устойчивые методы пчеловодства гарантируют, что каждая банка содержит
                   чистый, нефильтрованный мёд, который передаёт суть природы.
                 </p>
@@ -35,11 +35,11 @@ export default function AboutPage() {
 
               <div className={styles.statsGrid}>
                 <div className={styles.statItem}>
-                  <div className={styles.statNumber}>200+</div>
+                  <div className={styles.statNumber}>20+</div>
                   <div className={styles.statLabel}>Активных ульев</div>
                 </div>
                 <div className={styles.statItem}>
-                  <div className={styles.statNumber}>15+</div>
+                  <div className={styles.statNumber}>5+</div>
                   <div className={styles.statLabel}>Сортов мёда</div>
                 </div>
                 <div className={styles.statItem}>
@@ -47,14 +47,14 @@ export default function AboutPage() {
                   <div className={styles.statLabel}>Органический процесс</div>
                 </div>
                 <div className={styles.statItem}>
-                  <div className={styles.statNumber}>500+</div>
+                  <div className={styles.statNumber}>100+</div>
                   <div className={styles.statLabel}>Довольных клиентов</div>
                 </div>
               </div>
             </div>
 
             <div className={styles.imageContainer}>
-              <Image src="/images/beekeeper.jpg" alt="Пчеловод работает с ульями" width={600} height={500} />
+              <Image src="/images/keeper.jpg" alt="Пчеловод работает с ульями" width={600} height={500} />
             </div>
           </div>
 

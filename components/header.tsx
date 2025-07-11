@@ -26,7 +26,7 @@ export function Header() {
               <div className={styles.logoIcon}>
                 <span>🍯</span>
               </div>
-              <span className={styles.logoText}>Золотой Улей</span>
+              <span className={styles.logoText}>ПЧАЛЯР</span>
             </Link>
 
             <nav className={styles.navigation}>

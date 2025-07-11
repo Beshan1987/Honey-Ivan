@@ -4,9 +4,8 @@ import { CartProvider } from "@/contexts/cart-context"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "Золотой Улей - Натуральный мёд",
+  title: "ПЧАЛЯР - Натуральный мёд",
   description: "Премиальные медовые продукты от нашей семьи к вашей. Чистый, натуральный и экологически чистый мёд.",
-    generator: 'v0.dev'
 }
 
 export default function RootLayout({
