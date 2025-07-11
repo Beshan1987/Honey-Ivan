@@ -3,6 +3,33 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import styles from "./page.module.css"
 
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "О нас - Пчаляр | Семейная пасека с 1985 года",
+  description:
+    "История семейной пасеки Золотой Улей. 5+ лет опыта в пчеловодстве, 20+ ульев, экологически чистое производство мёда в Беларуси.",
+  keywords:
+    "о компании, пасека, пчеловодство, семейный бизнес, история компании, экологическое производство, устойчивое пчеловодство",
+  openGraph: {
+    title: "О нас - Золотой Улей | Семейная пасека",
+    description: "Узнайте историю нашей семейной пасеки. 15+ лет опыта, 200+ ульев, экологически чистое производство.",
+    type: "website",
+    images: [
+      {
+        url: "/images/beekeeper.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Пчеловод за работой - ПЧАЛЯР",
+      },
+    ],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+}
+
 export default function AboutPage() {
   return (
     <div className={styles.page}>

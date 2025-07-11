@@ -5,6 +5,47 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { AddToCartButton } from "@/components/add-to-cart-button"
 import styles from "./page.module.css"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "ПЧАЛЯР - Натуральный мёд прямо из улья | Премиальные медовые продукты",
+  description:
+    "Купить натуральный мёд в Беларуси. Цветочный, липовый, гречишный мёд и медовые соты. Доставка по всей стране. 100% качество, экологически чистое производство.",
+  keywords:
+    "мёд, натуральный мёд, купить мёд, мёд Беларусь, цветочный мёд, липовый мёд, медовые соты, пчеловодство, экологический мёд",
+  openGraph: {
+    title: "ПЧАЛЯР - Натуральный мёд прямо из улья",
+    description: "Премиальные медовые продукты от нашей семьи к вашей. Чистый, натуральный и экологически чистый мёд.",
+    type: "website",
+    locale: "by_BY",
+    siteName: "ПЧАЛЯР",
+    images: [
+      {
+        url: "/images/hero-honey.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Натуральный мёд Золотой Улей",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ПЧАЛЯР - Натуральный мёд",
+    description: "Премиальные медовые продукты. Чистый, натуральный и экологически чистый мёд.",
+    images: ["/images/hero-honey.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+}
 
 export default function HomePage() {
   const products = [

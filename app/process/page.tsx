@@ -3,6 +3,34 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import styles from "./page.module.css"
 
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Процесс производства мёда - ПЧАЛЯР | От улья до стола",
+  description:
+    "Узнайте о процессе производства натурального мёда: от выбора места пасеки до упаковки. 6 этапов контроля качества, традиционные методы и современные технологии.",
+  keywords:
+    "процесс производства мёда, как делают мёд, этапы производства, контроль качества, пчеловодство, технология производства",
+  openGraph: {
+    title: "Процесс производства мёда - От улья до стола",
+    description:
+      "Узнайте, как мы создаём премиальный мёд, следуя традиционным методам и современным стандартам качества.",
+    type: "website",
+    images: [
+      {
+        url: "/images/beekeeper.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Процесс производства мёда",
+      },
+    ],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+}
+
 export default function ProcessPage() {
   const processSteps = [
     {
