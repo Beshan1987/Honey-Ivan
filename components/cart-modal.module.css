@@ -96,6 +96,7 @@
 }
 
 .cartItem {
+  flex-wrap: wrap;
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -186,6 +187,11 @@
 .removeButton:hover {
   background-color: #fee2e2;
   color: #dc2626;
+}
+
+.removeButton span {
+  color: red;
+  margin-left: 1rem;
 }
 
 .deliveryInfo {

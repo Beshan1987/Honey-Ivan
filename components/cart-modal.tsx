@@ -208,14 +208,20 @@ export function CartModal({ isOpen, onClose }: CartModalProps) {
             <>
               <div className={styles.itemsList}>
                 {items.map((item) => (
+
                   <div key={item.id} className={styles.cartItem}>
+
                     <div className={styles.itemImage}>
                       <Image src={item.image || "/placeholder.svg"} alt={item.name} width={60} height={60} />
                     </div>
 
+
                     <div className={styles.itemDetails}>
                       <h4 className={styles.itemName}>{item.name}</h4>
                       <p className={styles.itemPrice}>{item.price} BYN</p>
+                      <button className={styles.removeButton} onClick={() => removeItem(item.id)}>
+                        <span>удалить</span><X size={16} />
+                      </button>
                     </div>
 
                     <div className={styles.quantityControls}>
@@ -235,10 +241,6 @@ export function CartModal({ isOpen, onClose }: CartModalProps) {
                     </div>
 
                     <div className={styles.itemTotal}>{(item.price * item.quantity).toFixed(0)} BYN</div>
-
-                    <button className={styles.removeButton} onClick={() => removeItem(item.id)}>
-                      <X size={16} />
-                    </button>
                   </div>
                 ))}
               </div>

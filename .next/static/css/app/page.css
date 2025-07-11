@@ -854,6 +854,7 @@
 }
 
 .cart-modal_cartItem__oxB8Y {
+  flex-wrap: wrap;
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -944,6 +945,11 @@
 .cart-modal_removeButton__LoGQc:hover {
   background-color: #fee2e2;
   color: #dc2626;
+}
+
+.cart-modal_removeButton__LoGQc span {
+  color: red;
+  margin-left: 1rem;
 }
 
 .cart-modal_deliveryInfo__DzDxg {
