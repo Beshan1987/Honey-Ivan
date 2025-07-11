@@ -52,7 +52,7 @@ export function MobileMenu() {
             <div className={styles.logoIcon}>
               <span>🍯</span>
             </div>
-            <span className={styles.logoText}>Золотой Улей</span>
+            <span className={styles.logoText}>ПЧАЛЯР</span>
           </div>
           <button className={styles.closeButton} onClick={closeMenu} aria-label="Закрыть меню">
             <X size={24} />
