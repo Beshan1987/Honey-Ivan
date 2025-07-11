@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { X, Plus, Minus, Send, MapPin, MessageSquare, Truck } from "lucide-react"
+import { X, Plus, Minus, Send, MapPin, MessageSquare, Truck, Mail, Phone } from "lucide-react"
 import Image from "next/image"
 import { useCart } from "@/contexts/cart-context"
 import styles from "./cart-modal.module.css"
@@ -17,25 +17,50 @@ export function CartModal({ isOpen, onClose }: CartModalProps) {
   const [orderSent, setOrderSent] = useState(false)
   const [deliveryAddress, setDeliveryAddress] = useState("")
   const [additionalInfo, setAdditionalInfo] = useState("")
+  const [customerName, setCustomerName] = useState("")
+  const [customerPhone, setCustomerPhone] = useState("")
   const [addressError, setAddressError] = useState("")
+  const [nameError, setNameError] = useState("")
+  const [phoneError, setPhoneError] = useState("")
+  const [orderMethod, setOrderMethod] = useState<"telegram" | "direct">("telegram")
 
   // Подсчитываем общий объем в литрах
   const totalLiters = items.reduce((sum, item) => sum + item.quantity, 0)
   const isFreeDelivery = totalLiters >= 2
 
-  const validateForm = () => {
+  const validateForm = (method: "telegram" | "direct") => {
+    let isValid = true
+
     if (!deliveryAddress.trim()) {
       setAddressError("Пожалуйста, укажите адрес доставки")
-      return false
+      isValid = false
+    } else {
+      setAddressError("")
     }
-    setAddressError("")
-    return true
+
+    if (method === "direct") {
+      if (!customerName.trim()) {
+        setNameError("Пожалуйста, укажите ваше имя")
+        isValid = false
+      } else {
+        setNameError("")
+      }
+
+      if (!customerPhone.trim()) {
+        setPhoneError("Пожалуйста, укажите номер телефона")
+        isValid = false
+      } else {
+        setPhoneError("")
+      }
+    }
+
+    return isValid
   }
 
   const sendToTelegram = async () => {
     if (items.length === 0) return
 
-    if (!validateForm()) return
+    if (!validateForm("telegram")) return
 
     setIsLoading(true)
 
@@ -85,8 +110,68 @@ export function CartModal({ isOpen, onClose }: CartModalProps) {
     }, 3000)
   }
 
+  const sendDirectOrder = async () => {
+    if (items.length === 0) return
+
+    if (!validateForm("direct")) return
+
+    setIsLoading(true)
+
+    // Подсчитываем стоимость доставки
+    const deliveryCost = isFreeDelivery ? 0 : 10
+    const finalTotal = total + deliveryCost
+
+    // Формируем сообщение для email
+    const orderText =
+      `🍯 НОВЫЙ ЗАКАЗ МЁДА (БЕЗ TELEGRAM)\n\n` +
+      `👤 ДАННЫЕ КЛИЕНТА:\n` +
+      `Имя: ${customerName}\n` +
+      `Телефон: ${customerPhone}\n\n` +
+      `📋 Список товаров:\n` +
+      items
+        .map(
+          (item) =>
+            `• ${item.name}\n  Количество: ${item.quantity} шт.\n  Цена: ${item.price} BYN\n  Сумма: ${item.price * item.quantity} BYN\n`,
+        )
+        .join("\n") +
+      `\n📊 ИТОГО:\n` +
+      `💰 Сумма товаров: ${total.toFixed(0)} BYN\n` +
+      `📦 Общий объем: ${totalLiters} литр${totalLiters === 1 ? "" : totalLiters < 5 ? "а" : "ов"}\n` +
+      `🚚 Доставка: ${isFreeDelivery ? "БЕСПЛАТНО (0 BYN)" : "10 BYN"}\n` +
+      `💳 ИТОГО К ОПЛАТЕ: ${finalTotal.toFixed(0)} BYN\n\n` +
+      `📍 АДРЕС ДОСТАВКИ:\n${deliveryAddress}\n\n` +
+      (additionalInfo.trim() ? `📝 ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ:\n${additionalInfo}\n\n` : "") +
+      `📅 Дата заказа: ${new Date().toLocaleString("ru-RU")}\n\n` +
+      `⚠️ ВНИМАНИЕ: Клиент НЕ использует Telegram. Свяжитесь с ним по телефону: ${customerPhone}`
+
+    // Отправляем через email
+    const subject = `🍯 Новый заказ мёда от ${customerName}`
+    const encodedSubject = encodeURIComponent(subject)
+    const encodedBody = encodeURIComponent(orderText)
+    const mailtoUrl = `mailto:nickel07@mail.ru?subject=${encodedSubject}&body=${encodedBody}`
+
+    // Открываем почтовый клиент
+    window.open(mailtoUrl, "_self")
+
+    // Показываем сообщение об успехе и очищаем корзину
+    setOrderSent(true)
+    clearCart()
+    setDeliveryAddress("")
+    setAdditionalInfo("")
+    setCustomerName("")
+    setCustomerPhone("")
+    setIsLoading(false)
+
+    setTimeout(() => {
+      setOrderSent(false)
+      onClose()
+    }, 3000)
+  }
+
   const handleClose = () => {
     setAddressError("")
+    setNameError("")
+    setPhoneError("")
     onClose()
   }
 
@@ -106,8 +191,12 @@ export function CartModal({ isOpen, onClose }: CartModalProps) {
           {orderSent ? (
             <div className={styles.successMessage}>
               <div className={styles.successIcon}>✅</div>
-              <h3>Переход в Telegram!</h3>
-              <p>Telegram должен открыться с готовым сообщением. Отправьте его для оформления заказа.</p>
+              <h3>{orderMethod === "telegram" ? "Переход в Telegram!" : "Заказ отправлен!"}</h3>
+              <p>
+                {orderMethod === "telegram"
+                  ? "Telegram должен открыться с готовым сообщением. Отправьте его для оформления заказа."
+                  : "Ваш заказ отправлен Ивану по email. Он свяжется с вами в ближайшее время по указанному телефону."}
+              </p>
             </div>
           ) : items.length === 0 ? (
             <div className={styles.emptyCart}>
@@ -181,6 +270,77 @@ export function CartModal({ isOpen, onClose }: CartModalProps) {
                 </div>
               </div>
 
+              {/* Выбор способа заказа */}
+              <div className={styles.orderMethodSection}>
+                <h3 className={styles.orderMethodTitle}>Способ оформления заказа</h3>
+                <div className={styles.orderMethodButtons}>
+                  <button
+                    className={`${styles.methodButton} ${orderMethod === "telegram" ? styles.methodButtonActive : ""}`}
+                    onClick={() => setOrderMethod("telegram")}
+                  >
+                    <Send className={styles.methodIcon} />
+                    <div>
+                      <div className={styles.methodTitle}>Через Telegram</div>
+                      <div className={styles.methodDescription}>Быстро и удобно</div>
+                    </div>
+                  </button>
+                  <button
+                    className={`${styles.methodButton} ${orderMethod === "direct" ? styles.methodButtonActive : ""}`}
+                    onClick={() => setOrderMethod("direct")}
+                  >
+                    <Phone className={styles.methodIcon} />
+                    <div>
+                      <div className={styles.methodTitle}>Без Telegram</div>
+                      <div className={styles.methodDescription}>Иван свяжется с вами</div>
+                    </div>
+                  </button>
+                </div>
+              </div>
+
+              {/* Форма для заказа без Telegram */}
+              {orderMethod === "direct" && (
+                <div className={styles.customerForm}>
+                  <h4 className={styles.customerFormTitle}>Ваши контактные данные</h4>
+                  <div className={styles.formRow}>
+                    <div className={styles.formGroup}>
+                      <label className={styles.formLabel}>
+                        <MapPin className={styles.labelIcon} />
+                        Ваше имя *
+                      </label>
+                      <input
+                        type="text"
+                        className={`${styles.formInput} ${nameError ? styles.formError : ""}`}
+                        value={customerName}
+                        onChange={(e) => {
+                          setCustomerName(e.target.value)
+                          if (nameError) setNameError("")
+                        }}
+                        placeholder="Как к вам обращаться?"
+                      />
+                      {nameError && <span className={styles.errorMessage}>{nameError}</span>}
+                    </div>
+
+                    <div className={styles.formGroup}>
+                      <label className={styles.formLabel}>
+                        <Phone className={styles.labelIcon} />
+                        Номер телефона *
+                      </label>
+                      <input
+                        type="tel"
+                        className={`${styles.formInput} ${phoneError ? styles.formError : ""}`}
+                        value={customerPhone}
+                        onChange={(e) => {
+                          setCustomerPhone(e.target.value)
+                          if (phoneError) setPhoneError("")
+                        }}
+                        placeholder="+375 XX XXX-XX-XX"
+                      />
+                      {phoneError && <span className={styles.errorMessage}>{phoneError}</span>}
+                    </div>
+                  </div>
+                </div>
+              )}
+
               {/* Форма доставки */}
               <div className={styles.deliveryForm}>
                 <div className={styles.formGroup}>
@@ -241,14 +401,25 @@ export function CartModal({ isOpen, onClose }: CartModalProps) {
                     Очистить корзину
                   </button>
 
-                  <button
-                    className={styles.orderButton}
-                    onClick={sendToTelegram}
-                    disabled={isLoading || !deliveryAddress.trim()}
-                  >
-                    <Send size={16} />
-                    {isLoading ? "Отправка..." : "Оформить заказ"}
-                  </button>
+                  {orderMethod === "telegram" ? (
+                    <button
+                      className={styles.orderButton}
+                      onClick={sendToTelegram}
+                      disabled={isLoading || !deliveryAddress.trim()}
+                    >
+                      <Send size={16} />
+                      {isLoading ? "Отправка..." : "Написать в Telegram"}
+                    </button>
+                  ) : (
+                    <button
+                      className={styles.orderButton}
+                      onClick={sendDirectOrder}
+                      disabled={isLoading || !deliveryAddress.trim() || !customerName.trim() || !customerPhone.trim()}
+                    >
+                      <Mail size={16} />
+                      {isLoading ? "Отправка..." : "Оформить заказ"}
+                    </button>
+                  )}
                 </div>
               </div>
             </>
