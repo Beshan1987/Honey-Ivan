@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { X, Plus, Minus, Send, MapPin, MessageSquare, Truck, Mail, Phone } from "lucide-react"
 import Image from "next/image"
+import { Tooltip } from "react-tooltip"
 import { useCart } from "@/contexts/cart-context"
 import styles from "./cart-modal.module.css"
 
@@ -27,6 +28,40 @@ export function CartModal({ isOpen, onClose }: CartModalProps) {
   // Подсчитываем общий объем в литрах
   const totalLiters = items.reduce((sum, item) => sum + item.quantity, 0)
   const isFreeDelivery = totalLiters >= 2
+
+  // Функция для определения причин блокировки кнопки
+  const getDisabledReasons = (method: "telegram" | "direct") => {
+    const reasons: string[] = []
+
+    if (items.length === 0) {
+      reasons.push("Корзина пуста")
+    }
+
+    if (!deliveryAddress.trim()) {
+      reasons.push("Не указан адрес доставки")
+    }
+
+    if (method === "direct") {
+      if (!customerName.trim()) {
+        reasons.push("Не указано имя")
+      }
+      if (!customerPhone.trim()) {
+        reasons.push("Не указан телефон")
+      }
+    }
+
+    if (isLoading) {
+      reasons.push("Идёт отправка заказа")
+    }
+
+    return reasons
+  }
+
+  const telegramDisabledReasons = getDisabledReasons("telegram")
+  const directDisabledReasons = getDisabledReasons("direct")
+
+  const isTelegramDisabled = telegramDisabledReasons.length > 0
+  const isDirectDisabled = directDisabledReasons.length > 0
 
   const validateForm = (method: "telegram" | "direct") => {
     let isValid = true
@@ -208,19 +243,16 @@ export function CartModal({ isOpen, onClose }: CartModalProps) {
             <>
               <div className={styles.itemsList}>
                 {items.map((item) => (
-
                   <div key={item.id} className={styles.cartItem}>
-
                     <div className={styles.itemImage}>
                       <Image src={item.image || "/placeholder.svg"} alt={item.name} width={60} height={60} />
                     </div>
-
 
                     <div className={styles.itemDetails}>
                       <h4 className={styles.itemName}>{item.name}</h4>
                       <p className={styles.itemPrice}>{item.price} BYN</p>
                       <button className={styles.removeButton} onClick={() => removeItem(item.id)}>
-                        <span>удалить</span><X size={16} />
+                        <span>удалить</span>
                       </button>
                     </div>
 
@@ -404,23 +436,71 @@ export function CartModal({ isOpen, onClose }: CartModalProps) {
                   </button>
 
                   {orderMethod === "telegram" ? (
-                    <button
-                      className={styles.orderButton}
-                      onClick={sendToTelegram}
-                      disabled={isLoading || !deliveryAddress.trim()}
-                    >
-                      <Send size={16} />
-                      {isLoading ? "Отправка..." : "Написать в Telegram"}
-                    </button>
+                    <div className={styles.buttonWrapper}>
+                      <button
+                        className={`${styles.orderButton} ${isTelegramDisabled ? styles.orderButtonDisabled : ""}`}
+                        onClick={sendToTelegram}
+                        disabled={isTelegramDisabled}
+                        data-tooltip-id="telegram-button-tooltip"
+                        data-tooltip-content={
+                          isTelegramDisabled
+                            ? `Невозможно отправить заказ:\n${telegramDisabledReasons.map((reason) => `• ${reason}`).join("\n")}`
+                            : "Отправить заказ через Telegram"
+                        }
+                      >
+                        <Send size={16} />
+                        {isLoading ? "Отправка..." : "Написать в Telegram"}
+                      </button>
+                      <Tooltip
+                        id="telegram-button-tooltip"
+                        place="top"
+                        style={{
+                          backgroundColor: isTelegramDisabled ? "#dc2626" : "#10b981",
+                          color: "white",
+                          borderRadius: "8px",
+                          padding: "8px 12px",
+                          fontSize: "14px",
+                          maxWidth: "300px",
+                          whiteSpace: "pre-line",
+                          textAlign: "left",
+                          zIndex: 9999,
+                        }}
+                        opacity={1}
+                      />
+                    </div>
                   ) : (
-                    <button
-                      className={styles.orderButton}
-                      onClick={sendDirectOrder}
-                      disabled={isLoading || !deliveryAddress.trim() || !customerName.trim() || !customerPhone.trim()}
-                    >
-                      <Mail size={16} />
-                      {isLoading ? "Отправка..." : "Оформить заказ"}
-                    </button>
+                    <div className={styles.buttonWrapper}>
+                      <button
+                        className={`${styles.orderButton} ${isDirectDisabled ? styles.orderButtonDisabled : ""}`}
+                        onClick={sendDirectOrder}
+                        disabled={isDirectDisabled}
+                        data-tooltip-id="direct-button-tooltip"
+                        data-tooltip-content={
+                          isDirectDisabled
+                            ? `Невозможно отправить заказ:\n${directDisabledReasons.map((reason) => `• ${reason}`).join("\n")}`
+                            : "Отправить заказ по email"
+                        }
+                      >
+                        <Mail size={16} />
+                        {isLoading ? "Отправка..." : "Оформить заказ"}
+                      </button>
+                      <Tooltip
+                        id="direct-button-tooltip"
+                        place="top"
+                        style={{
+                          backgroundColor: isDirectDisabled ? "#dc2626" : "#10b981",
+                          color: "white",
+                          borderRadius: "8px",
+                          padding: "8px 12px",
+                          fontSize: "14px",
+                          maxWidth: "300px",
+                          whiteSpace: "pre-line",
+                          textAlign: "left",
+                          zIndex: 9999,
+                        }}
+                        opacity={1}
+                      />
+                    </div>
                   )}
                 </div>
               </div>

@@ -171,9 +171,6 @@
 }
 
 .removeButton {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
@@ -184,14 +181,13 @@
   transition: all 0.2s ease-in-out;
 }
 
+.removeButton span {
+  color: tomato;
+}
+
 .removeButton:hover {
   background-color: #fee2e2;
   color: #dc2626;
-}
-
-.removeButton span {
-  color: red;
-  margin-left: 1rem;
 }
 
 .deliveryInfo {
@@ -503,6 +499,12 @@
   color: #dc2626;
 }
 
+.buttonWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
 .orderButton {
   display: flex;
   align-items: center;
@@ -520,11 +522,25 @@
 
 .orderButton:hover:not(:disabled) {
   background-color: var(--accent-secondary);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
 }
 
-.orderButton:disabled {
-  opacity: 0.6;
+.orderButton:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.orderButtonDisabled {
+  background-color: #9ca3af;
+  color: #6b7280;
   cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.orderButtonDisabled:hover {
+  background-color: #9ca3af;
+  transform: none;
+  box-shadow: none;
 }
 
 @media (min-width: 640px) {
@@ -536,7 +552,7 @@
     flex: 1;
   }
 
-  .orderButton {
+  .buttonWrapper {
     flex: 2;
   }
 
