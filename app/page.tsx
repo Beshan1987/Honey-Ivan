@@ -183,7 +183,7 @@ export default function HomePage() {
               </div>
               <h3 className={styles.featureTitle}>Признание</h3>
               <p className={styles.featureDescription}>
-                Более 100 доволных покупателей регулярно приобретают наш мед
+                Более 100 довольных покупателей регулярно приобретают наш мед
               </p>
             </div>
           </div>
