@@ -14,7 +14,7 @@ interface Product {
   originalPrice?: number | null
   image: string
   rating: number
-  reviews: number
+  reviews: number | null
   description: string
   badge?: string | null
 }
@@ -45,7 +45,9 @@ export function ProductCard({ product }: ProductCardProps) {
         </div>
         <div className={styles.productContent}>
           <div>
-            <h3 className={styles.productTitle}>{product.name}</h3>
+            <h3 className={styles.productTitle}>{product.name}
+              <p>{product.name.includes('соты') ? "(одна рамка)" : "(1 литр)"}</p>
+            </h3>
             <p className={styles.productDescription}>{product.description}</p>
           </div>
 
@@ -58,9 +60,9 @@ export function ProductCard({ product }: ProductCardProps) {
                 />
               ))}
             </div>
-            <span className={styles.ratingText}>
+            {product.reviews && <span className={styles.ratingText}>
               {product.rating} ({product.reviews} отзывов)
-            </span>
+            </span>}
           </div>
 
           <div className={styles.productPrice}>

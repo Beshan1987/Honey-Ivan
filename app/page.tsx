@@ -6,6 +6,7 @@ import { Footer } from "@/components/footer"
 import { ProductCard } from "@/components/product-card"
 import styles from "./page.module.css"
 import type { Metadata } from "next"
+import { products } from "./constants/products"
 
 export const metadata: Metadata = {
   title: "ПЧАЛЯР - Натуральный мёд прямо из улья | Премиальные медовые продукты",
@@ -48,52 +49,7 @@ export const metadata: Metadata = {
 }
 
 export default function HomePage() {
-  const products = [
-    {
-      id: 1,
-      name: "Цветочный мёд 1 литр",
-      price: 18,
-      originalPrice: 20,
-      image: "/images/pic-card1.jpg",
-      rating: 4.8,
-      reviews: 127,
-      description: "Чистый цветочный мёд, собранный с местных лугов",
-      badge: "Хит продаж",
-    },
-    {
-      id: 2,
-      name: "Мёд Манука 1 литр",
-      price: 19,
-      originalPrice: null,
-      image: "/images/pic-card4.jpg",
-      rating: 4.9,
-      reviews: 89,
-      description: "Премиальный мёд Манука с высоким содержанием MGO",
-      badge: "Премиум",
-    },
-    {
-      id: 3,
-      name: "Клеверный мёд 1 литр",
-      price: 15,
-      originalPrice: null,
-      image: "/images/pic-card3.jpg",
-      rating: 4.7,
-      reviews: 203,
-      description: "Лёгкий и мягкий клеверный мёд, идеален для ежедневного использования",
-      badge: null,
-    },
-    {
-      id: 4,
-      name: "Медовые соты 1 литр",
-      price: 17,
-      originalPrice: 19,
-      image: "/images/pic-card2.jpg",
-      rating: 3.5,
-      reviews: 156,
-      description: "Натуральные медовые соты прямо из улья",
-      badge: "Сырой и натуральный",
-    },
-  ]
+
 
   return (
     <div className={styles.page}>
@@ -145,7 +101,9 @@ export default function HomePage() {
 
             <div className={styles.heroImage}>
               <div className={styles.heroImageContainer}>
-                <Image src="/images/hero-pic.jpg" alt="Банка чистого мёда" width={500} height={600} />
+                <Image src="/images/hero-pic.jpg" alt="Банка чистого мёда" width={500}
+                  height={475}
+                  layout="responsive" />
               </div>
               <div className={styles.heroImageBg}></div>
             </div>

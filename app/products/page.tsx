@@ -1,6 +1,7 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { ProductCard } from "@/components/product-card"
+import { products } from "../constants/products"
 import styles from "./page.module.css"
 
 import type { Metadata } from "next"
@@ -31,74 +32,6 @@ export const metadata: Metadata = {
 }
 
 export default function ProductsPage() {
-  const products = [
-    {
-      id: 1,
-      name: "Цветочный мёд 1 литр",
-      price: 18,
-      originalPrice: 20,
-      image: "/images/pic-card1.jpg",
-      rating: 4.8,
-      reviews: 127,
-      description: "Чистый цветочный мёд, собранный с местных лугов",
-      badge: "Хит продаж",
-    },
-    {
-      id: 2,
-      name: "Мёд Манука 1 литр",
-      price: 19,
-      originalPrice: null,
-      image: "/images/pic-card4.jpg",
-      rating: 4.9,
-      reviews: 89,
-      description: "Премиальный мёд Манука с высоким содержанием MGO",
-      badge: "Премиум",
-    },
-    {
-      id: 3,
-      name: "Клеверный мёд 1 литр",
-      price: 15,
-      originalPrice: null,
-      image: "/images/pic-card3.jpg",
-      rating: 4.7,
-      reviews: 203,
-      description: "Лёгкий и мягкий клеверный мёд, идеален для ежедневного использования",
-      badge: null,
-    },
-    {
-      id: 4,
-      name: "Медовые соты 1 литр",
-      price: 17,
-      originalPrice: 19,
-      image: "/images/pic-card2.jpg",
-      rating: 4.9,
-      reviews: 156,
-      description: "Натуральные медовые соты прямо из улья",
-      badge: "Сырой и натуральный",
-    },
-    {
-      id: 5,
-      name: "Липовый мёд 1 литр",
-      price: 16,
-      originalPrice: null,
-      image: "/images/pic-card3.jpg",
-      rating: 4.8,
-      reviews: 94,
-      description: "Ароматный липовый мёд с нежным вкусом",
-      badge: null,
-    },
-    {
-      id: 6,
-      name: "Гречишный мёд 1 литр",
-      price: 18,
-      originalPrice: 20,
-      image: "/images/pic-card1.jpg",
-      rating: 4.6,
-      reviews: 78,
-      description: "Тёмный гречишный мёд с богатым вкусом",
-      badge: "Ограниченная серия",
-    },
-  ]
 
   return (
     <div className={styles.page}>
