@@ -30,8 +30,8 @@
 }
 
 .logoIcon {
-  width: 2rem;
-  height: 2rem;
+  width: 30px;
+  height: 30px;
   background-color: var(--accent-primary);
   border-radius: 50%;
   display: flex;

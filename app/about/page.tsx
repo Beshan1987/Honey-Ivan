@@ -78,7 +78,8 @@ export default function AboutPage() {
             </div>
 
             <div className={styles.imageContainer}>
-              <Image src="/images/keeper.jpg" alt="Пчеловод работает с ульями" width={600} height={500} layout="responsive" />
+              <Image src="/images/about.jpeg" alt="Пчеловод работает с ульями" width={600} height={500} layout="responsive" />
+              <Image src="/images/about1.jpeg" alt="Пчеловод работает с ульями" width={600} height={500} layout="responsive" />
             </div>
           </div>
 
