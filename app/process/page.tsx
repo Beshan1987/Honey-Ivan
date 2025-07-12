@@ -107,7 +107,7 @@ export default function ProcessPage() {
                     <h3 className={styles.stepTitle}>{step.title}</h3>
                     <p className={styles.stepDescription}>{step.description}</p>
                   </div>
-                  {index < processSteps.length - 1 && <div className={styles.stepConnector}></div>}
+                  {/* {index < processSteps.length - 1 && <div className={styles.stepConnector}></div>} */}
                 </div>
               ))}
             </div>
