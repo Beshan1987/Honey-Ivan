@@ -164,6 +164,7 @@
 }
 
 .itemTotal {
+  margin: auto;
   font-weight: 600;
   color: var(--text-primary);
   min-width: 5rem;

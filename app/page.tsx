@@ -1,9 +1,9 @@
-import { Star, Truck, Shield, Award } from "lucide-react"
+import { Truck, Shield, Award } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { AddToCartButton } from "@/components/add-to-cart-button"
+import { ProductCard } from "@/components/product-card"
 import styles from "./page.module.css"
 import type { Metadata } from "next"
 
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     siteName: "ПЧАЛЯР",
     images: [
       {
-        url: "/images/hero-honey.jpg",
+        url: "/images/hero-pic.jpg",
         width: 1200,
         height: 630,
         alt: "Натуральный мёд Золотой Улей",
@@ -129,11 +129,11 @@ export default function HomePage() {
 
               <div className={styles.heroStats}>
                 <div className={styles.statItem}>
-                  <div className={styles.statNumber}>100+</div>
+                  <div className={styles.statNumber}>500+</div>
                   <div className={styles.statLabel}>Довольных клиентов</div>
                 </div>
                 <div className={styles.statItem}>
-                  <div className={styles.statNumber}>5+</div>
+                  <div className={styles.statNumber}>15+</div>
                   <div className={styles.statLabel}>Лет опыта</div>
                 </div>
                 <div className={styles.statItem}>
@@ -145,7 +145,7 @@ export default function HomePage() {
 
             <div className={styles.heroImage}>
               <div className={styles.heroImageContainer}>
-                <Image src="/images/hero-pic.jpg" alt="Банка чистого мёда" width={500} height={600} layout="responsive" />
+                <Image src="/images/hero-pic.jpg" alt="Банка чистого мёда" width={500} height={600} />
               </div>
               <div className={styles.heroImageBg}></div>
             </div>
@@ -163,7 +163,7 @@ export default function HomePage() {
               </div>
               <h3 className={styles.featureTitle}>Бесплатная доставка</h3>
               <p className={styles.featureDescription}>
-                Бесплатная доставка при заказе от 30 BYN. Быстрая и надёжная доставка по всей Беларуси.
+                Бесплатная доставка при заказе от 50 BYN. Быстрая и надёжная доставка по всей Беларуси.
               </p>
             </div>
 
@@ -181,9 +181,9 @@ export default function HomePage() {
               <div className={styles.featureIcon}>
                 <Award />
               </div>
-              <h3 className={styles.featureTitle}>Признание</h3>
+              <h3 className={styles.featureTitle}>Награды</h3>
               <p className={styles.featureDescription}>
-                Более 100 довольных покупателей регулярно приобретают наш мед
+                Признание за превосходство в производстве мёда и устойчивое пчеловодство.
               </p>
             </div>
           </div>
@@ -204,54 +204,7 @@ export default function HomePage() {
 
           <div className={`${styles.productsGrid} md-grid-cols-2 lg-grid-cols-4`}>
             {products.map((product) => (
-              <div key={product.id} className={styles.productCard}>
-                <div className={styles.productImageContainer}>
-                  <Image
-                    src={product.image || "/placeholder.svg"}
-                    alt={product.name}
-                    width={300}
-                    height={300}
-                    className={styles.productImage}
-                  />
-                  {product.badge && <span className={styles.productBadge}>{product.badge}</span>}
-                </div>
-                <div className={styles.productContent}>
-                  <div className={styles.productContainer}>
-                    <h3 className={styles.productTitle}>{product.name}</h3>
-                    <p className={styles.productDescription}>{product.description}</p>
-                  </div>
-
-                  <div className={styles.productRating}>
-                    <div className={styles.stars}>
-                      {[...Array(5)].map((_, i) => (
-                        <Star
-                          key={i}
-                          className={`${styles.star} ${i < Math.floor(product.rating) ? styles.starFilled : styles.starEmpty
-                            }`}
-                        />
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className={styles.productPrice}>
-                    <div className={styles.priceContainer}>
-                      <span className={styles.currentPrice}>{product.price} BYN</span>
-                      {product.originalPrice && (
-                        <span className={styles.originalPrice}>{product.originalPrice} BYN</span>
-                      )}
-                    </div>
-                  </div>
-
-                  <AddToCartButton
-                    product={{
-                      id: product.id,
-                      name: product.name,
-                      price: product.price,
-                      image: product.image,
-                    }}
-                  />
-                </div>
-              </div>
+              <ProductCard key={product.id} product={product} />
             ))}
           </div>
         </div>

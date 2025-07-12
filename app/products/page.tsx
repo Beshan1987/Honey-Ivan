@@ -1,8 +1,6 @@
-import { Star } from "lucide-react"
-import Image from "next/image"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { AddToCartButton } from "@/components/add-to-cart-button"
+import { ProductCard } from "@/components/product-card"
 import styles from "./page.module.css"
 
 import type { Metadata } from "next"
@@ -119,54 +117,7 @@ export default function ProductsPage() {
 
           <div className={`${styles.grid} md-grid-cols-2 lg-grid-cols-3`}>
             {products.map((product) => (
-              <div key={product.id} className={styles.productCard}>
-                <div className={styles.imageContainer}>
-                  <Image
-                    src={product.image || "/placeholder.svg"}
-                    alt={product.name}
-                    width={300}
-                    height={300}
-                    className={styles.productImage}
-                  />
-                  {product.badge && <span className={styles.badge}>{product.badge}</span>}
-                </div>
-                <div className={styles.content}>
-                  <div className={styles.contentContainer}>
-                    <h3 className={styles.productTitle}>{product.name}</h3>
-                    <p className={styles.productDescription}>{product.description}</p>
-                  </div>
-
-                  <div className={styles.rating}>
-                    <div className={styles.stars}>
-                      {[...Array(5)].map((_, i) => (
-                        <Star
-                          key={i}
-                          className={`${styles.star} ${i < Math.floor(product.rating) ? styles.starFilled : styles.starEmpty
-                            }`}
-                        />
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className={styles.priceSection}>
-                    <div className={styles.priceContainer}>
-                      <span className={styles.currentPrice}>{product.price} BYN</span>
-                      {product.originalPrice && (
-                        <span className={styles.originalPrice}>{product.originalPrice} BYN</span>
-                      )}
-                    </div>
-                  </div>
-
-                  <AddToCartButton
-                    product={{
-                      id: product.id,
-                      name: product.name,
-                      price: product.price,
-                      image: product.image,
-                    }}
-                  />
-                </div>
-              </div>
+              <ProductCard key={product.id} product={product} />
             ))}
           </div>
         </div>
