@@ -23,16 +23,16 @@ export function Footer() {
             <h4>Продукция</h4>
             <ul className={styles.linkList}>
               <li>
-                <Link href="/products">Цветочный мёд</Link>
+                <Link href="/products#product1">Цветочный мёд</Link>
               </li>
               <li>
-                <Link href="/products">Мёд Манука</Link>
+                <Link href="/products#product2">Гречишный мёд</Link>
               </li>
               <li>
-                <Link href="/products">Медовые соты</Link>
+                <Link href="/products#product3">Падевый мёд</Link>
               </li>
               <li>
-                <Link href="/products">Липовый мёд</Link>
+                <Link href="/products#product4">Медовые соты</Link>
               </li>
             </ul>
           </div>

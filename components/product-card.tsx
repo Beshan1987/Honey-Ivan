@@ -32,7 +32,7 @@ export function ProductCard({ product }: ProductCardProps) {
 
   return (
     <>
-      <div className={styles.productCard}>
+      <div className={styles.productCard} id={"product" + product.id}>
         <div className={styles.productImageContainer}>
           <Image
             src={product.image || "/placeholder.svg"}
