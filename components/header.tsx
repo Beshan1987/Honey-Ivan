@@ -62,7 +62,11 @@ export function Header() {
               </Link>
             </div>
 
+
             <div className={styles.mobileActions}>
+              <Link href="/products" className={styles.shopButton}>
+                Купить сейчас
+              </Link>
               <ThemeToggle />
               <CartIcon onClick={() => setIsCartOpen(true)} />
               <MobileMenu />

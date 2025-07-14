@@ -91,6 +91,16 @@
   gap: 0.5rem;
 }
 
+.mobileActions .shopButton {
+  background-color: var(--accent-primary);
+  color: var(--bg-primary);
+  padding: 0.5rem 0.2rem;
+  border-radius: 0.2rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease-in-out;
+  text-decoration: none;
+}
+
 .desktopActions {
   display: none;
   align-items: center;

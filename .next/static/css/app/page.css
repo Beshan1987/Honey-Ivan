@@ -1407,6 +1407,16 @@
   gap: 0.5rem;
 }
 
+.header_mobileActions__IXe0U .header_shopButton__iNrmI {
+  background-color: var(--accent-primary);
+  color: var(--bg-primary);
+  padding: 0.5rem 0.2rem;
+  border-radius: 0.2rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease-in-out;
+  text-decoration: none;
+}
+
 .header_desktopActions__G6bqw {
   display: none;
   align-items: center;
