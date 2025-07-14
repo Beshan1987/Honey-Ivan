@@ -117,12 +117,12 @@ export function AddToCartButton({
           </div>
 
           {/* Статус добавления */}
-          {isAdded && (
+          {/* {isAdded && (
             <div className={styles.addedStatus}>
               <Check size={16} />
               <span>Добавлено в корзину!</span>
             </div>
-          )}
+          )} */}
         </div>
       </div>
     )
