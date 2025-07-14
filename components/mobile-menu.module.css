@@ -58,10 +58,13 @@
 }
 
 .logoIcon {
-  width: 2rem;
-  height: 2rem;
-  background-color: var(--accent-primary);
+  width: 40px;
+  height: 40px;
+  padding: 3px;
+  overflow: hidden;
+  background-color: white;
   border-radius: 50%;
+  border: 1px solid var(--border-color);
   display: flex;
   align-items: center;
   justify-content: center;
