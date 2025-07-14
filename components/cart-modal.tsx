@@ -449,7 +449,7 @@ export function CartModal({ isOpen, onClose }: CartModalProps) {
                         }
                       >
                         <Send size={16} />
-                        {isLoading ? "Отправка..." : "Написать в Telegram"}
+                        {isLoading ? "Отправка..." : "Оформить заказ"}
                       </button>
                       <Tooltip
                         id="telegram-button-tooltip"
