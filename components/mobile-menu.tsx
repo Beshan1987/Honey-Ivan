@@ -90,6 +90,13 @@ export function MobileMenu() {
             О нас
           </Link>
           <Link
+            href="/process"
+            className={`${styles.navLink} ${isActive("/process") ? styles.navLinkActive : ""}`}
+            onClick={closeMenu}
+          >
+            Наш процесс
+          </Link>
+          <Link
             href="/contact"
             className={`${styles.navLink} ${isActive("/contact") ? styles.navLinkActive : ""}`}
             onClick={closeMenu}
