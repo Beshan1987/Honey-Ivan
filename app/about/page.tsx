@@ -6,7 +6,7 @@ import styles from "./page.module.css"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "О нас - Пчаляр | Семейная пасека с 1985 года",
+  title: "О нас - Пчаляр | Семейная пасека",
   description:
     "История семейной пасеки. 5+ лет опыта в пчеловодстве, 20+ ульев, экологически чистое производство мёда в Беларуси.",
   keywords:
