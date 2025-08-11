@@ -8,12 +8,12 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "О нас - Пчаляр | Семейная пасека с 1985 года",
   description:
-    "История семейной пасеки Золотой Улей. 5+ лет опыта в пчеловодстве, 20+ ульев, экологически чистое производство мёда в Беларуси.",
+    "История семейной пасеки. 5+ лет опыта в пчеловодстве, 20+ ульев, экологически чистое производство мёда в Беларуси.",
   keywords:
-    "о компании, пасека, пчеловодство, семейный бизнес, история компании, экологическое производство, устойчивое пчеловодство",
+    "о компании, пасека, пчеловодство, семейный бизнес",
   openGraph: {
     title: "О нас - Пчаляр",
-    description: "Узнайте историю нашей семейной пасеки. 15+ лет опыта, 200+ ульев, экологически чистое производство.",
+    description: "Узнайте историю нашей семейной пасеки. 5+ лет опыта, 20+ ульев, экологически чистое.",
     type: "website",
     images: [
       {
@@ -50,10 +50,10 @@ export default function AboutPage() {
               <div className={styles.textSection}>
                 <h2 className={styles.mainTitle}>От хобби к образу жизни</h2>
                 <p className={styles.paragraph}>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est quos commodi vel ipsam et similique ea neque unde molestiae facilis. Iusto accusamus mollitia impedit eius, eum molestias saepe quibusdam velit.
+                  Это не просто хобби, а настоящее страстное увлечение, которое помогает мне быть ближе к природе, развивать терпение и получать самые вкусные медовые моменты. Приглашаю вас присоединиться к моему пути и открыть для себя удивительный мир пчел и натурального меда!
                 </p>
                 <p className={styles.paragraph}>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est quos commodi vel ipsam et similique ea neque unde molestiae facilis. Iusto accusamus mollitia impedit eius, eum molestias saepe quibusdam velit.
+
                 </p>
               </div>
 
@@ -111,7 +111,7 @@ export default function AboutPage() {
                 </div>
                 <h3 className={styles.valueTitle}>Качество</h3>
                 <p className={styles.valueDescription}>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium aliquid laboriosam non sequi fuga hic quia. Asperiores, molestiae deserunt enim ipsum tempore rerum, quisquam quae nulla quas repellendus qui possimus!
+                  это натуральный продукт высочайшего качества, созданный с любовью и заботой о природе. Мы используем только проверенные методы пчеловодства, избегая химических добавок и консервантов, чтобы сохранить все полезные свойства меда
                 </p>
               </div>
 

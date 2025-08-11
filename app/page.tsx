@@ -63,13 +63,13 @@ export default function HomePage() {
               <div className={styles.heroText}>
                 <span className="badge">100% Чистый и Натуральный</span>
                 <h1 className={styles.heroTitle}>
-                  Чистый Мёд
-                  <span className={styles.heroTitleAccent}> Прямо</span>
+                  Вкусный мёд
+                  <span className={styles.heroTitleAccent}> прямо</span>
                   <br />
-                  Из Улья
+                  из Улья
                 </h1>
                 <p className={styles.heroDescription}>
-                  Откройте для себя лучший выбор сырого, нефильтрованного мёда, собранного с заботой из наших местных
+                  Откройте для себя лучший выбор мёда, собранного с заботой из наших местных
                   пасек. Почувствуйте разницу, которую даёт чистый, натуральный мёд.
                 </p>
               </div>
@@ -85,16 +85,16 @@ export default function HomePage() {
 
               <div className={styles.heroStats}>
                 <div className={styles.statItem}>
-                  <div className={styles.statNumber}>500+</div>
+                  <div className={styles.statNumber}>100+</div>
                   <div className={styles.statLabel}>Довольных клиентов</div>
                 </div>
                 <div className={styles.statItem}>
-                  <div className={styles.statNumber}>15+</div>
+                  <div className={styles.statNumber}>5+</div>
                   <div className={styles.statLabel}>Лет опыта</div>
                 </div>
                 <div className={styles.statItem}>
                   <div className={styles.statNumber}>100%</div>
-                  <div className={styles.statLabel}>Чистый и натуральный</div>
+                  <div className={styles.statLabel}>Вкусный и натуральный</div>
                 </div>
               </div>
             </div>
@@ -131,11 +131,11 @@ export default function HomePage() {
               </div>
               <h3 className={styles.featureTitle}>Гарантия качества</h3>
               <p className={styles.featureDescription}>
-                100% гарантия удовлетворения. Чистый, сырой мёд или возврат денег.
+                100% гарантия удовлетворения.
               </p>
             </div>
 
-            <div className={styles.featureItem}>
+            {/* <div className={styles.featureItem}>
               <div className={styles.featureIcon}>
                 <Award />
               </div>
@@ -143,7 +143,7 @@ export default function HomePage() {
               <p className={styles.featureDescription}>
                 Признание за превосходство в производстве мёда и устойчивое пчеловодство.
               </p>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
